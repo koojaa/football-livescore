@@ -3,9 +3,11 @@ import Calendar from './Calendar';
 
 class MatchFinder extends Component {
 	render() {
+		const { setRange } = this.props;
+
 		return (
 			<div>
-				<Calendar />
+				<Calendar setRange={setRange} />
 			</div>
 		);
 	}
