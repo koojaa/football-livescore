@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MatchTemplate from './MatchTemplate/MatchTemplate';
 import MatchFinder from './MatchFinder';
 import dateFormatter from '../utils/dateFormatter';
+import Match from './Match';
 
 class App extends Component {
 	state = {
@@ -26,7 +27,9 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<MatchTemplate header={<MatchFinder setRange={this.handleRange} />} />
+				<MatchTemplate header={<MatchFinder setRange={this.handleRange} />}>
+					<Match range={this.state.range} />
+				</MatchTemplate>
 			</div>
 		);
 	}
