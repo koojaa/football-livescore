@@ -6,9 +6,10 @@ import Match from './Match';
 
 class App extends Component {
 	state = {
+		leagueId: 148,
 		range: {
-			startDate: null,
-			endDate: null
+			startDate: '2020-01-01',
+			endDate: '2020-02-01'
 		}
 	};
 
@@ -24,11 +25,27 @@ class App extends Component {
 		});
 	};
 
+	handleLeagueId = leagueId => {
+		this.setState({
+			leagueId
+		});
+	};
+
 	render() {
+		const { leagueId, range } = this.state;
+
 		return (
 			<div>
-				<MatchTemplate header={<MatchFinder setRange={this.handleRange} />}>
-					<Match range={this.state.range} />
+				<MatchTemplate
+					header={
+						<MatchFinder
+							setRange={this.handleRange}
+							setLeagueId={this.handleLeagueId}
+							leagueId={leagueId}
+						/>
+					}
+				>
+					<Match range={range} leagueId={leagueId} />
 				</MatchTemplate>
 			</div>
 		);

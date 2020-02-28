@@ -14,10 +14,13 @@ class MatchList extends Component {
 		});
 
 		const { startDate, endDate } = this.props.range;
+		const { leagueId } = this.props;
+
+		const query = `&from=${startDate}&to=${endDate}&league_id=${leagueId}`;
 
 		try {
 			const response = await axios.get(
-				`https://apiv2.apifootball.com/?action=get_events&from=${startDate}&to=${endDate}&league_id=148&APIkey=${process.env.API_KEY}`
+				`https://apiv2.apifootball.com/?action=get_events${query}&APIkey=${process.env.API_KEY}`
 			);
 
 			this.setState({
@@ -37,7 +40,10 @@ class MatchList extends Component {
 	}
 
 	componentDidUpdate(prevProps, prevState) {
-		if (this.props.range !== prevProps.range) {
+		if (
+			this.props.range !== prevProps.range ||
+			this.props.leagueId !== prevProps.leagueId
+		) {
 			this.getData();
 		}
 	}
