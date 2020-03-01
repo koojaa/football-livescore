@@ -20,7 +20,7 @@ class MatchList extends Component {
 
 		try {
 			const response = await axios.get(
-				`https://apiv2.apifootball.com/?action=get_events${query}&APIkey=${process.env.API_KEY}`
+				`https://apiv2.apifootball.com/?action=get_events${query}&APIkey=6bbbf7c5391af62da1d56e0148ac5d58d3a1d4efe43259ca3db01eee1ba598ae`
 			);
 
 			this.setState({
