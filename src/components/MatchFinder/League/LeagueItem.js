@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import './LeagueItem.scss';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 
 class LeagueItem extends Component {
   render() {
@@ -11,7 +11,7 @@ class LeagueItem extends Component {
         <NavLink
           activeClassName="selected"
           className="league"
-          to={`/${league}`}
+          to={`/match/${league}${this.props.location.search}`}
         >
           {league_name}
         </NavLink>
@@ -20,4 +20,4 @@ class LeagueItem extends Component {
   }
 }
 
-export default LeagueItem;
+export default withRouter(LeagueItem);

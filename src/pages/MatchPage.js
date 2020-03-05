@@ -8,7 +8,8 @@ import Match from '../components/Match';
 class MatchPage extends Component {
   render() {
     const { match, location } = this.props;
-    const { leagueName } = match;
+    const { leagueName } = match.params;
+
     const range = qs.parse(location.search.substr(1));
 
     return (

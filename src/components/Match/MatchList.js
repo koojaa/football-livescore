@@ -15,8 +15,8 @@ class MatchList extends Component {
     });
 
     const { from, to } = this.props.range;
+
     const { leagueName } = this.props;
-    console.log(leagueName);
     const leagueId = leagueIdMapper(leagueName);
 
     const query = `&from=${from}&to=${to}&league_id=${leagueId}`;

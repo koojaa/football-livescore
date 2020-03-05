@@ -58,7 +58,7 @@ class LeagueList extends Component {
                 <li key={league.league_id} className="leagueList">
                   <LeagueItem
                     league_name={league.league_name}
-                    league={league}
+                    league={league.league}
                   />
                 </li>
               );

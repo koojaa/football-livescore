@@ -1,4 +1,4 @@
-export default function(leagueName) {
+export default function leagueIdMapper(leagueName) {
   const leagueMaps = [
     {
       league_name: 'premier',
