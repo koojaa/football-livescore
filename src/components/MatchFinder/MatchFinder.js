@@ -3,16 +3,14 @@ import Calendar from './Calendar';
 import League from './League';
 
 class MatchFinder extends Component {
-	render() {
-		const { setRange, setLeagueId, leagueId } = this.props;
-
-		return (
-			<div>
-				<League setLeagueId={setLeagueId} leagueId={leagueId} />
-				<Calendar setRange={setRange} />
-			</div>
-		);
-	}
+  render() {
+    return (
+      <div>
+        <League />
+        <Calendar />
+      </div>
+    );
+  }
 }
 
 export default MatchFinder;

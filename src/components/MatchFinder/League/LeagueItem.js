@@ -1,21 +1,23 @@
 import React, { Component, Fragment } from 'react';
 import './LeagueItem.scss';
+import { NavLink } from 'react-router-dom';
 
 class LeagueItem extends Component {
-	render() {
-		const { setLeagueId, selected, league_name, league_id } = this.props;
+  render() {
+    const { league_name, league } = this.props;
 
-		return (
-			<Fragment>
-				<span
-					className={`league ${selected && 'selected'}`}
-					onClick={() => setLeagueId(league_id)}
-				>
-					{league_name}
-				</span>
-			</Fragment>
-		);
-	}
+    return (
+      <Fragment>
+        <NavLink
+          activeClassName="selected"
+          className="league"
+          to={`/${league}`}
+        >
+          {league_name}
+        </NavLink>
+      </Fragment>
+    );
+  }
 }
 
 export default LeagueItem;
