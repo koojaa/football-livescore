@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import App from './components/App';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 class Root extends Component {
   render() {
     return (
       <div>
         <BrowserRouter>
-          <App />
+          <Route path="/" component={App} />
         </BrowserRouter>
       </div>
     );
