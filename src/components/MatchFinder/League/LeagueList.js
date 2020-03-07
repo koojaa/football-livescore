@@ -22,7 +22,7 @@ const leagueTypes = [
   },
   {
     league: 'laliga',
-    league_name: '라리가',
+    league_name: '라',
     league_id: 468
   },
   {

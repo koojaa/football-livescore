@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import App from './components/App';
 import { BrowserRouter, Route } from 'react-router-dom';
+import { hot } from 'react-hot-loader';
 
 class Root extends Component {
   render() {
@@ -14,4 +15,4 @@ class Root extends Component {
   }
 }
 
-export default Root;
+export default hot(module)(Root);
