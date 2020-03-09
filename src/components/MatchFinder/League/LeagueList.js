@@ -14,7 +14,7 @@ import './LeagueList.scss';
  *
  */
 
-const leagueTypes = [
+export const leagueTypes = [
   {
     league: 'premier',
     league_name: '프리미어 리그',
@@ -22,7 +22,7 @@ const leagueTypes = [
   },
   {
     league: 'laliga',
-    league_name: '라',
+    league_name: '라리가',
     league_id: 468
   },
   {

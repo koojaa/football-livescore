@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Match from './Match';
 import axios from 'axios';
 import leagueIdMapper from '../../utils/leagueIdMapper';
+import { withRouter } from 'react-router-dom';
 
 class MatchList extends Component {
   state = {
@@ -15,7 +16,6 @@ class MatchList extends Component {
     });
 
     const { from, to } = this.props.range;
-
     const { leagueName } = this.props;
     const leagueId = leagueIdMapper(leagueName);
 
@@ -53,6 +53,7 @@ class MatchList extends Component {
 
   render() {
     const { loading, data } = this.state;
+    console.log(this.props.location);
 
     return (
       <div>
@@ -71,4 +72,4 @@ class MatchList extends Component {
   }
 }
 
-export default MatchList;
+export default withRouter(MatchList);

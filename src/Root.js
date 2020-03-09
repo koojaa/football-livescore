@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import App from './components/App';
 import { BrowserRouter, Route } from 'react-router-dom';
-import { hot } from 'react-hot-loader';
+import { hot, setConfig } from 'react-hot-loader';
+
+setConfig({
+  reloadHooks: true
+});
 
 class Root extends Component {
   render() {
