@@ -285,6 +285,7 @@ module.exports = function(webpackEnv) {
         .map(ext => `.${ext}`)
         .filter(ext => useTypeScript || !ext.includes('ts')),
       alias: {
+        'react-dom': '@hot-loader/react-dom',
         // Support React Native Web
         // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
         'react-native': 'react-native-web',
@@ -317,6 +318,19 @@ module.exports = function(webpackEnv) {
     module: {
       strictExportPresence: true,
       rules: [
+        //        // "React-Hot-Loader: react-🔥-dom patch is not detected. React 16.6+ features may not work." warning fix
+        //        {
+        //          test: /\.(js|jsx)$/,
+        //          loader: 'babel-loader',
+        //          exclude: /node_modules/,
+        //          include: /src/
+        //        },
+        //        {
+        //          test: /\.(js|jsx)$/,
+        //          use: 'react-hot-loader/webpack',
+        //          include: /node_modules/
+        //        },
+
         // Disable require.ensure as it's not a standard language feature.
         { parser: { requireEnsure: false } },
 
@@ -365,7 +379,7 @@ module.exports = function(webpackEnv) {
                   'babel-preset-react-app/webpack-overrides'
                 ),
                 plugins: [
-                  'react-hot-loader/babel',
+                  ['react-hot-loader/babel'],
                   [
                     require.resolve('babel-plugin-named-asset-import'),
                     {
